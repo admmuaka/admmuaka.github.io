@@ -1,210 +1,323 @@
-:root{
-  --bg:#070A12;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --txt:#E9ECF4;
-  --muted:rgba(233,236,244,.72);
-  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --r:18px;
+const i18n = {
+  fr: {
+    nav_projects: "Projets",
+    nav_skills: "Compétences",
+    nav_about: "À propos",
+    nav_contact: "Contact",
+    hero_eyebrow: "Data Scientist • Statistiques • NLP • Prédictif",
+    hero_title_1: "Je transforme des données techniques en",
+    hero_title_2: "décisions",
+    hero_title_3: "et",
+    hero_title_4: "prévisions",
+    hero_subtitle: "Focus : maintenance prédictive (aéronautique), extraction d’informations (NLP), modélisation (GLM/RF), séries temporelles, dashboards Power BI, et projets actuariat (pricing).",
+    hero_now: "Actuellement :",
+    hero_cta_projects: "Voir les projets",
+    hero_cta_contact: "Me contacter",
+    hero_role: "Data Scientist • Statistiques",
+    kv_specialties_k: "Spécialités",
+    kv_specialties_v: "Prédictif • NLP • QA data • Time series • Pricing",
+    kv_domains_k: "Domaines",
+    kv_domains_v: "Aéronautique • Risk/Assurance • Industrie",
+    kv_stack_k: "Stack",
+    link_linkedin: "LinkedIn",
+    link_email: "Email",
+    stat_projects_k: "Projets",
+    stat_focus_k: "Focus",
+    stat_focus_v: "Predictive / Actuarial",
+    stat_avail_k: "Disponibilité",
+    stat_avail_v: "CDI / CDD / VIE",
+    projects_title: "Projets",
+    projects_sub: "Chaque projet est présenté comme un “case study” : objectif → méthode → résultat → impact.",
+    filter_all: "Tous",
+    filter_predictive: "Prédictif",
+    filter_nlp: "NLP",
+    filter_risk: "Actuariat / Risk",
+    filter_bi: "Power BI",
+    search_placeholder: "Rechercher un projet (ex: random forest, pricing...)",
+    skills_title: "Compétences",
+    skills_sub: "Un mix stats + ML + actuariat + dataviz.",
+    skills_modeling_title: "Data & Modélisation",
+    skills_modeling_1: "GLM (logistique, Poisson), tests (χ², Fisher), interprétation",
+    skills_modeling_2: "Random Forest, encodage catégoriel, calibration, métriques",
+    skills_modeling_3: "Séries temporelles : décomposition, stationnarité, SARIMA",
+    skills_act_title: "Actuariat / Pricing",
+    skills_act_1: "Fréquence / sévérité : distributions, prime pure, segmentation",
+    skills_act_2: "Ratemaking : experience rating, ajustements, hypothèses",
+    skills_act_3: "Reporting clair : résultats + limites + recommandations",
+    skills_nlp_title: "NLP technique",
+    skills_nlp_1: "Extraction d’entités (PART / ACTION / OBS / QTY)",
+    skills_nlp_2: "spaCy + Transformers (xlm-roberta), pipelines, évaluation",
+    skills_nlp_3: "Structuration de logs de réparation → variables exploitables",
+    skills_tools_title: "Outils",
+    about_title: "À propos",
+    about_sub: "Profil stats orienté impact et opérationnel.",
+    about_p1: "Diplômée d’un master en statistique, je construis des solutions data end-to-end : exploration, dashboards (Power BI) → modèles (Python/R) → restitution actionnable. Mes projets couvrent la maintenance prédictive (aéronautique) et des cas actuariat/pricing.",
+    about_hint: "Astuce : on peut remplacer ce texte par une version “recruteur-friendly” en 6–8 lignes.",
+    contact_title: "Contact",
+    contact_sub: "On peut échanger sur un poste, un projet, ou une collaboration.",
+    contact_reach_title: "Me joindre",
+    contact_reach_sub: "Remplace les liens ci-dessous par les tiens :",
+    cv_sub: "Ajoute ton CV en PDF dans le repo (ex: assets/CV_Audrey_Muaka.pdf)",
+    cv_download: "Télécharger le CV",
+  },
+  en: {
+    nav_projects: "Projects",
+    nav_skills: "Skills",
+    nav_about: "About",
+    nav_contact: "Contact",
+    hero_eyebrow: "Data Scientist • Statistics • NLP • Predictive",
+    hero_title_1: "I turn technical data into",
+    hero_title_2: "decisions",
+    hero_title_3: "and",
+    hero_title_4: "forecasts",
+    hero_subtitle: "Focus: predictive maintenance (aerospace), NLP information extraction, modeling (GLM/RF), time series, Power BI dashboards, and actuarial pricing projects.",
+    hero_now: "Currently:",
+    hero_cta_projects: "See projects",
+    hero_cta_contact: "Contact me",
+    hero_role: "Data Scientist • Statistics",
+    kv_specialties_k: "Specialties",
+    kv_specialties_v: "Predictive • NLP • Data QA • Time series • Pricing",
+    kv_domains_k: "Domains",
+    kv_domains_v: "Aerospace • Risk/Insurance • Industry",
+    kv_stack_k: "Stack",
+    link_linkedin: "LinkedIn",
+    link_email: "Email",
+    stat_projects_k: "Projects",
+    stat_focus_k: "Focus",
+    stat_focus_v: "Predictive / Actuarial",
+    stat_avail_k: "Availability",
+    stat_avail_v: "Full-time / Fixed-term / VIE",
+    projects_title: "Projects",
+    projects_sub: "Each project is a mini case study: goal → method → results → impact.",
+    filter_all: "All",
+    filter_predictive: "Predictive",
+    filter_nlp: "NLP",
+    filter_risk: "Actuarial / Risk",
+    filter_bi: "Power BI",
+    search_placeholder: "Search a project (e.g., random forest, pricing...)",
+    skills_title: "Skills",
+    skills_sub: "A mix of statistics, ML, actuarial pricing, and data viz.",
+    skills_modeling_title: "Data & Modeling",
+    skills_modeling_1: "GLMs (logistic, Poisson), hypothesis tests, interpretation",
+    skills_modeling_2: "Random Forest, categorical encoding, calibration, metrics",
+    skills_modeling_3: "Time series: decomposition, stationarity, SARIMA",
+    skills_act_title: "Actuarial / Pricing",
+    skills_act_1: "Frequency/severity: distributions, pure premium, segmentation",
+    skills_act_2: "Ratemaking: experience rating, adjustments, assumptions",
+    skills_act_3: "Clear reporting: results + limits + recommendations",
+    skills_nlp_title: "Technical NLP",
+    skills_nlp_1: "Entity extraction (PART / ACTION / OBS / QTY)",
+    skills_nlp_2: "spaCy + Transformers (xlm-roberta), pipelines, evaluation",
+    skills_nlp_3: "Turn repair logs into usable structured features",
+    skills_tools_title: "Tools",
+    about_title: "About",
+    about_sub: "Impact-driven, hands-on statistics profile.",
+    about_p1: "MSc in Statistics. I build end-to-end data solutions: exploration, Power BI dashboards → models (Python/R) → actionable insights. My work spans predictive maintenance (aerospace) and actuarial/pricing case studies.",
+    about_hint: "Tip: we can rewrite this into a recruiter-friendly 6–8 line summary.",
+    contact_title: "Contact",
+    contact_sub: "Happy to discuss roles, projects, or collaborations.",
+    contact_reach_title: "Get in touch",
+    contact_reach_sub: "Replace the links below with yours:",
+    cv_sub: "Add your resume PDF to the repo (e.g., assets/CV_Audrey_Muaka.pdf)",
+    cv_download: "Download resume",
+  }
+};
+
+const projects = [
+  {
+    id: "pred-maint-aero",
+    tags: ["predictive"],
+    fr: {
+      title: "Maintenance prédictive — analyse de la casse (aéronautique)",
+      desc: "Prévision des demandes de réparation et identification des facteurs de casse (site, client, catégorie…). Modèles + métriques + recommandations.",
+      bullets: ["Features catégorielles", "GLM / Random Forest", "Time-series (SARIMA)"],
+      linkLabel: "Voir le repo",
+      link: "#"
+    },
+    en: {
+      title: "Predictive maintenance — breakage analytics (aerospace)",
+      desc: "Forecast repair requests and identify breakage drivers (site, customer, category…). Models + metrics + business recommendations.",
+      bullets: ["Categorical features", "GLM / Random Forest", "Time-series (SARIMA)"],
+      linkLabel: "View repo",
+      link: "#"
+    }
+  },
+  {
+    id: "nlp-ner-parts",
+    tags: ["nlp", "predictive"],
+    fr: {
+      title: "NLP — extraction de pièces cassées (NER spaCy/Transformers)",
+      desc: "Extraction d’entités (PART/ACTION/OBS/QTY) depuis des descriptions techniques pour structurer les données et alimenter l’analytique.",
+      bullets: ["spaCy + xlm-roberta", "Évaluation & erreurs", "Structuration logs → variables"],
+      linkLabel: "Voir le repo",
+      link: "#"
+    },
+    en: {
+      title: "NLP — parts extraction from technical logs (spaCy/Transformers NER)",
+      desc: "Extract entities (PART/ACTION/OBS/QTY) from technical text to structure data and enable analytics.",
+      bullets: ["spaCy + xlm-roberta", "Evaluation & error analysis", "Logs → structured features"],
+      linkLabel: "View repo",
+      link: "#"
+    }
+  },
+  {
+    id: "bi-dashboard",
+    tags: ["bi"],
+    fr: {
+      title: "Power BI — dashboards SAV / qualité",
+      desc: "KPIs, exploration, tendances, segments (client/site/produit) pour aider la décision opérationnelle.",
+      bullets: ["Storytelling KPI", "Filtres & drill-down", "Pilotage opérationnel"],
+      linkLabel: "Voir aperçu",
+      link: "#"
+    },
+    en: {
+      title: "Power BI — after-sales / quality dashboards",
+      desc: "KPIs, exploration, trends, segmentation (customer/site/product) to support operational decisions.",
+      bullets: ["KPI storytelling", "Filters & drill-down", "Operational monitoring"],
+      linkLabel: "View preview",
+      link: "#"
+    }
+  },
+  {
+    id: "marine-liability-pricing",
+    tags: ["risk"],
+    fr: {
+      title: "Actuariat — tarification Marine Liability (case study)",
+      desc: "Analyse de sinistres (patterns/anomalies), approche fréquence×sévérité, prime pure, segmentation et hypothèses de pricing.",
+      bullets: ["Frequency/Severity", "Experience rating", "Rapport de pricing"],
+      linkLabel: "Voir le rapport",
+      link: "#"
+    },
+    en: {
+      title: "Actuarial — Marine Liability pricing (case study)",
+      desc: "Claims analysis (patterns/anomalies), frequency×severity framework, pure premium, segmentation and pricing assumptions.",
+      bullets: ["Frequency/Severity", "Experience rating", "Pricing report"],
+      linkLabel: "View report",
+      link: "#"
+    }
+  }
+];
+
+function setLang(lang) {
+  document.documentElement.setAttribute("lang", lang);
+  document.documentElement.dataset.lang = lang;
+
+  // text
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (i18n[lang] && i18n[lang][k]) el.textContent = i18n[lang][k];
+  });
+
+  // placeholders
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const k = el.getAttribute("data-i18n-placeholder");
+    if (i18n[lang] && i18n[lang][k]) el.setAttribute("placeholder", i18n[lang][k]);
+  });
+
+  // projects render
+  renderProjects();
+
+  // typing line
+  startTyping(lang);
+  localStorage.setItem("portfolio_lang", lang);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:var(--sans);
-  color:var(--txt);
-  background: radial-gradient(1100px 700px at 20% 20%, rgba(110,66,255,.25), transparent 60%),
-              radial-gradient(900px 700px at 80% 40%, rgba(0,209,255,.18), transparent 55%),
-              radial-gradient(1200px 900px at 40% 90%, rgba(0,255,163,.10), transparent 60%),
-              var(--bg);
-  overflow-x:hidden;
+let typingTimer = null;
+function startTyping(lang) {
+  const target = document.getElementById("typeTarget");
+  if (!target) return;
+
+  const lines = lang === "fr"
+    ? ["analyse de casse & prévision SAV", "NLP sur logs techniques", "tarification actuariat / pricing"]
+    : ["breakage analytics & repair forecasting", "NLP on technical logs", "actuarial pricing / ratemaking"];
+
+  let i = 0, j = 0, deleting = false;
+  clearInterval(typingTimer);
+
+  typingTimer = setInterval(() => {
+    const cur = lines[i];
+    if (!deleting) {
+      j++;
+      target.textContent = cur.slice(0, j);
+      if (j >= cur.length) { deleting = true; }
+    } else {
+      j--;
+      target.textContent = cur.slice(0, j);
+      if (j <= 0) { deleting = false; i = (i + 1) % lines.length; }
+    }
+  }, 60);
 }
 
-.bg-grid{
-  position:fixed; inset:0;
-  background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(closest-side, rgba(0,0,0,.75), transparent);
-  opacity:.35;
-  pointer-events:none;
-}
-.bg-orb{
-  position:fixed; width:520px; height:520px; border-radius:999px;
-  filter: blur(40px);
-  opacity:.35;
-  pointer-events:none;
-}
-.orb-1{left:-120px; top:120px; background:rgba(110,66,255,.65)}
-.orb-2{right:-140px; top:260px; background:rgba(0,209,255,.55)}
-.noise{
-  position:fixed; inset:0; pointer-events:none; opacity:.06;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-}
+let activeFilter = "all";
+function renderProjects() {
+  const lang = document.documentElement.dataset.lang || "fr";
+  const grid = document.getElementById("projectsGrid");
+  if (!grid) return;
 
-.container{max-width:1120px; margin:0 auto; padding:92px 20px 70px}
+  const q = (document.getElementById("searchInput")?.value || "").toLowerCase();
 
-.topbar{
-  position:sticky; top:0; z-index:10;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 20px;
-  backdrop-filter: blur(12px);
-  background:rgba(7,10,18,.55);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.brand{display:flex; align-items:center; gap:10px}
-.logo-dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,#6e42ff,#00d1ff)}
-.brand-name{font-weight:700}
-.brand-tag{color:var(--muted)}
-.nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
-.nav a{color:var(--muted); text-decoration:none}
-.nav a:hover{color:var(--txt)}
+  const items = projects.filter(p => {
+    const okFilter = activeFilter === "all" || p.tags.includes(activeFilter);
+    const t = p[lang].title.toLowerCase();
+    const d = p[lang].desc.toLowerCase();
+    const okSearch = !q || t.includes(q) || d.includes(q) || p.tags.join(" ").includes(q);
+    return okFilter && okSearch;
+  });
 
-.mono{font-family:var(--mono)}
-.tiny{font-size:12px}
-.muted{color:var(--muted)}
+  grid.innerHTML = items.map(p => {
+    const data = p[lang];
+    const bullets = data.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("");
+    const tags = p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+    const link = data.link && data.link !== "#"
+      ? `<a class="btn btn-glass" href="${data.link}" target="_blank" rel="noreferrer">${escapeHtml(data.linkLabel)}</a>`
+      : `<button class="btn btn-glass" type="button" onclick="alert('${lang === "fr" ? "Ajoute ton lien (repo, rapport, dashboard) dans script.js 🙂" : "Add your link (repo, report, dashboard) in script.js 🙂"}')">${escapeHtml(data.linkLabel)}</button>`;
 
-.hero{display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:start; padding-top:18px}
-@media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+    return `
+      <article class="card glass project">
+        <h3>${escapeHtml(data.title)}</h3>
+        <p>${escapeHtml(data.desc)}</p>
+        <ul class="list">${bullets}</ul>
+        <div class="tags">${tags}</div>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          ${link}
+        </div>
+      </article>
+    `;
+  }).join("");
 
-.eyebrow{color:var(--muted); margin:0 0 12px}
-.title{font-size:56px; line-height:1.02; margin:0 0 14px; letter-spacing:-.02em}
-@media (max-width: 560px){ .title{font-size:40px} }
-
-.neon{
-  background: linear-gradient(90deg, #6e42ff, #00d1ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.subtitle{color:var(--muted); margin:0 0 16px; max-width:58ch}
-
-.typing{display:flex; gap:10px; align-items:center; margin:10px 0 16px}
-.cursor{width:10px; height:18px; display:inline-block; background:rgba(233,236,244,.9); animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-.hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 14px}
-
-.chips{display:flex; gap:10px; flex-wrap:wrap}
-.chip{
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.05);
-  font-size:13px;
+  const stat = document.getElementById("statProjects");
+  if (stat) stat.textContent = String(projects.length);
 }
 
-.card{
-  border-radius: var(--r);
-  border:1px solid rgba(255,255,255,.10);
-  background: var(--card);
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
-}
-.glass{backdrop-filter: blur(12px)}
-.profile-card{padding:16px}
-.profile-top{display:flex; gap:14px; align-items:center}
-.avatar{position:relative; width:44px; height:44px}
-.avatar-ring{
-  position:absolute; inset:-3px; border-radius:999px;
-  background: conic-gradient(from 180deg, #6e42ff, #00d1ff, #6e42ff);
-  filter: blur(.2px);
-}
-.avatar-core{
-  position:absolute; inset:5px; border-radius:999px; background:rgba(7,10,18,.9);
-  border:1px solid rgba(255,255,255,.18);
-}
-.name{margin:0; font-weight:700}
-.role{margin:2px 0 0; color:var(--muted)}
-.divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
-
-.kv{display:flex; flex-direction:column; gap:10px}
-.kv-row{display:flex; justify-content:space-between; gap:14px}
-.kv-k{color:var(--muted)}
-.kv-v{color:var(--txt); text-align:right}
-
-.quicklinks{display:flex; gap:12px; flex-wrap:wrap}
-.ql{color:var(--txt); text-decoration:none; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04)}
-.ql:hover{background:rgba(255,255,255,.07)}
-
-.mini-stats{display:flex; gap:10px; padding:14px; margin-top:12px}
-.stat{flex:1}
-.stat-k{color:var(--muted); margin:0}
-.stat-v{margin:6px 0 0; font-weight:700}
-
-.section{margin-top:54px}
-.section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
-.section-head h2{margin:0; font-size:28px}
-.section-sub{margin:6px 0 0; color:var(--muted)}
-
-.toolbar{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:16px 0}
-.filters{display:flex; gap:10px; flex-wrap:wrap}
-.pill{
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.05);
-  color:var(--txt);
-  padding:8px 12px;
-  cursor:pointer;
-}
-.pill.active{border-color:rgba(0,209,255,.45); box-shadow: 0 0 0 3px rgba(0,209,255,.10) inset}
-.search input{
-  width:min(440px, 78vw);
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(7,10,18,.55);
-  color:var(--txt);
-  outline:none;
+function escapeHtml(s) {
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 }
 
-.grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
-@media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
-@media (max-width: 640px){ .grid{grid-template-columns:1fr} }
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".pill");
+  if (!btn) return;
+  document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeFilter = btn.dataset.filter || "all";
+  renderProjects();
+});
 
-.project{padding:14px}
-.project h3{margin:0 0 6px; font-size:16px}
-.project p{margin:0 0 10px; color:var(--muted); line-height:1.5}
-.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-.tag{
-  font-family:var(--mono);
-  font-size:11px;
-  padding:6px 8px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
-  color:rgba(233,236,244,.92);
-}
+document.addEventListener("input", (e) => {
+  if (e.target && e.target.id === "searchInput") renderProjects();
+});
 
-.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-@media (max-width: 820px){ .grid-2{grid-template-columns:1fr} }
+document.getElementById("year")?.append(new Date().getFullYear());
 
-.list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-.list li{margin:8px 0}
+document.getElementById("langBtn")?.addEventListener("click", () => {
+  const cur = document.documentElement.dataset.lang || "fr";
+  setLang(cur === "fr" ? "en" : "fr");
+});
 
-.badges{display:flex; gap:10px; flex-wrap:wrap; padding:10px 0 0}
-.badge{padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); font-size:13px}
-
-.about{padding:16px}
-.footer{margin-top:52px; text-align:center; color:rgba(233,236,244,.65)}
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:10px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  text-decoration:none;
-  color:var(--txt);
-  cursor:pointer;
-  font-weight:600;
-  background:rgba(255,255,255,.04);
-}
-.btn:hover{background:rgba(255,255,255,.07)}
-.btn-primary{
-  background:linear-gradient(90deg, rgba(110,66,255,.85), rgba(0,209,255,.75));
-  border-color:rgba(255,255,255,.18);
-}
-.btn-primary:hover{filter:brightness(1.06)}
-.btn-glass{background:rgba(255,255,255,.05)}
-.btn-ghost{background:transparent}
+// init
+const saved = localStorage.getItem("portfolio_lang");
+setLang(saved === "en" ? "en" : "fr");
