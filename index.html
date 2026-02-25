@@ -1,20 +1,24 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Portfolio - Audrey Muaka | Data Scientist" />
-  <title>Audrey Muaka — Data Scientist</title>
+  <title>Audrey Muaka — Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- IMPORTANT: chemins relatifs -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
+  <!-- background effects -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
   <header class="topbar">
     <div class="brand">
@@ -22,35 +26,246 @@
       <span class="brand-name">Audrey Muaka</span>
       <span class="brand-tag">/ portfolio</span>
     </div>
+
+    <nav class="nav">
+      <a href="#projects" data-i18n="nav_projects">Projets</a>
+      <a href="#skills" data-i18n="nav_skills">Compétences</a>
+      <a href="#about" data-i18n="nav_about">À propos</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+
+      <button class="btn btn-ghost" id="langBtn" type="button" aria-label="Language switch">
+        FR / EN
+      </button>
+    </nav>
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="hero">
-      <h1 class="title">
-        Je transforme des données techniques en 
-        <span class="neon">décisions</span> et 
-        <span class="neon">prévisions</span>.
-      </h1>
+      <div class="hero-left">
+        <p class="eyebrow" data-i18n="hero_eyebrow">Data Scientist • Statistiques • NLP • Prédictif</p>
 
-      <p class="subtitle">
-        Data Scientist spécialisée en maintenance prédictive, NLP et modélisation statistique.
-      </p>
+        <h1 class="title">
+          <span data-i18n="hero_title_1">Je transforme des données techniques en</span>
+          <span class="neon" data-i18n="hero_title_2">décisions</span>
+          <span data-i18n="hero_title_3">et</span>
+          <span class="neon" data-i18n="hero_title_4">prévisions</span><span>.</span>
+        </h1>
 
-      <a class="btn btn-primary" href="#contact">Me contacter</a>
+        <p class="subtitle" data-i18n="hero_subtitle">
+          Focus : maintenance prédictive (aéronautique), extraction d’informations (NLP),
+          modélisation (GLM/RF), séries temporelles, dashboards Power BI, et projets actuariat (pricing).
+        </p>
+
+        <div class="typing">
+          <span class="mono" data-i18n="hero_now">Actuellement :</span>
+          <span class="mono" id="typeTarget"></span>
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects" data-i18n="hero_cta_projects">Voir les projets</a>
+          <a class="btn btn-glass" href="#contact" data-i18n="hero_cta_contact">Me contacter</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">R</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">spaCy / Transformers</span>
+          <span class="chip">GLM</span>
+          <span class="chip">Random Forest</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card glass profile-card">
+          <div class="profile-top">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-ring"></div>
+              <div class="avatar-core"></div>
+            </div>
+            <div>
+              <p class="name">Audrey Muaka</p>
+              <p class="role mono" data-i18n="hero_role">Data Scientist • Statistiques</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kv">
+            <div class="kv-row">
+              <span class="kv-k mono" data-i18n="kv_specialties_k">Spécialités</span>
+              <span class="kv-v" data-i18n="kv_specialties_v">Prédictif • NLP • QA data • Time series • Pricing</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-k mono" data-i18n="kv_domains_k">Domaines</span>
+              <span class="kv-v" data-i18n="kv_domains_v">Aéronautique • Risk/Assurance • Industrie</span>
+            </div>
+            <div class="kv-row">
+              <span class="kv-k mono" data-i18n="kv_stack_k">Stack</span>
+              <span class="kv-v">pandas • scikit-learn • spaCy • Power BI • SQL</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="quicklinks">
+            <!-- Remplace les # par tes liens -->
+            <a class="ql" href="#" target="_blank" rel="noreferrer" data-i18n="link_linkedin">LinkedIn</a>
+            <a class="ql" href="https://github.com/admmuaka" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="ql" href="#contact" data-i18n="link_email">Email</a>
+          </div>
+        </div>
+
+        <div class="card glass mini-stats">
+          <div class="stat">
+            <p class="stat-k mono" data-i18n="stat_projects_k">Projets</p>
+            <p class="stat-v" id="statProjects">—</p>
+          </div>
+          <div class="stat">
+            <p class="stat-k mono" data-i18n="stat_focus_k">Focus</p>
+            <p class="stat-v" data-i18n="stat_focus_v">Predictive / Actuarial</p>
+          </div>
+          <div class="stat">
+            <p class="stat-k mono" data-i18n="stat_avail_k">Disponibilité</p>
+            <p class="stat-v" data-i18n="stat_avail_v">CDI / CDD / VIE</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email : audrey.muaka@email.com</p>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-head">
+        <h2 data-i18n="projects_title">Projets</h2>
+        <p class="section-sub" data-i18n="projects_sub">
+          Chaque projet est présenté comme un “case study” : objectif → méthode → résultat → impact.
+        </p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="pill active" data-filter="all" data-i18n="filter_all">Tous</button>
+          <button class="pill" data-filter="predictive" data-i18n="filter_predictive">Prédictif</button>
+          <button class="pill" data-filter="nlp" data-i18n="filter_nlp">NLP</button>
+          <button class="pill" data-filter="risk" data-i18n="filter_risk">Actuariat / Risk</button>
+          <button class="pill" data-filter="bi" data-i18n="filter_bi">Power BI</button>
+        </div>
+        <div class="search">
+          <input id="searchInput" type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher un projet (ex: random forest, pricing...)" />
+        </div>
+      </div>
+
+      <div class="grid" id="projectsGrid" aria-live="polite"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2 data-i18n="skills_title">Compétences</h2>
+        <p class="section-sub" data-i18n="skills_sub">Un mix stats + ML + actuariat + dataviz.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card glass">
+          <h3 data-i18n="skills_modeling_title">Data & Modélisation</h3>
+          <ul class="list">
+            <li data-i18n="skills_modeling_1">GLM (logistique, Poisson), tests (χ², Fisher), interprétation</li>
+            <li data-i18n="skills_modeling_2">Random Forest, encodage catégoriel, calibration, métriques</li>
+            <li data-i18n="skills_modeling_3">Séries temporelles : décomposition, stationnarité, SARIMA</li>
+          </ul>
+        </div>
+
+        <div class="card glass">
+          <h3 data-i18n="skills_act_title">Actuariat / Pricing</h3>
+          <ul class="list">
+            <li data-i18n="skills_act_1">Fréquence / sévérité : distributions, prime pure, segmentation</li>
+            <li data-i18n="skills_act_2">Ratemaking : experience rating, ajustements, hypothèses</li>
+            <li data-i18n="skills_act_3">Reporting clair : résultats + limites + recommandations</li>
+          </ul>
+        </div>
+
+        <div class="card glass">
+          <h3 data-i18n="skills_nlp_title">NLP technique</h3>
+          <ul class="list">
+            <li data-i18n="skills_nlp_1">Extraction d’entités (PART / ACTION / OBS / QTY)</li>
+            <li data-i18n="skills_nlp_2">spaCy + Transformers (xlm-roberta), pipelines, évaluation</li>
+            <li data-i18n="skills_nlp_3">Structuration de logs de réparation → variables exploitables</li>
+          </ul>
+        </div>
+
+        <div class="card glass">
+          <h3 data-i18n="skills_tools_title">Outils</h3>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">R</span>
+            <span class="badge">SQL</span>
+            <span class="badge">pandas</span>
+            <span class="badge">scikit-learn</span>
+            <span class="badge">spaCy</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">Git</span>
+            <span class="badge">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2 data-i18n="about_title">À propos</h2>
+        <p class="section-sub" data-i18n="about_sub">Profil stats orienté impact et opérationnel.</p>
+      </div>
+
+      <div class="card glass about">
+        <p data-i18n="about_p1">
+          Diplômée d’un master en statistique, je construis des solutions data end-to-end : exploration,
+          dashboards (Power BI) → modèles (Python/R) → restitution actionnable. Mes projets couvrent la
+          maintenance prédictive (aéronautique) et des cas actuariat/pricing.
+        </p>
+        <p class="mono tiny" data-i18n="about_hint">
+          Astuce : on peut remplacer ce texte par une version “recruteur-friendly” en 6–8 lignes.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p class="section-sub" data-i18n="contact_sub">On peut échanger sur un poste, un projet, ou une collaboration.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card glass">
+          <h3 data-i18n="contact_reach_title">Me joindre</h3>
+          <p class="muted" data-i18n="contact_reach_sub">Remplace les liens ci-dessous par les tiens :</p>
+          <div class="contact-links">
+            <a class="btn btn-glass" href="mailto:audrey.muaka@email.com">📩 Email</a>
+            <a class="btn btn-glass" href="#" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+            <a class="btn btn-glass" href="https://github.com/admmuaka" target="_blank" rel="noreferrer">💻 GitHub</a>
+          </div>
+        </div>
+
+        <div class="card glass">
+          <h3>CV</h3>
+          <p class="muted" data-i18n="cv_sub">
+            Ajoute ton CV en PDF dans le repo (ex: <span class="mono">assets/CV_Audrey_Muaka.pdf</span>)
+          </p>
+          <a class="btn btn-primary" id="cvBtn" href="#" onclick="alert('Ajoute ton PDF puis remplace ce lien 🙂'); return false;">
+            ⬇️ <span data-i18n="cv_download">Télécharger le CV</span>
+          </a>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-      <p>© Audrey Muaka</p>
+      <p class="mono tiny">© <span id="year"></span> Audrey Muaka • Built on GitHub Pages • Futuristic UI</p>
     </footer>
   </main>
 
-  <!-- IMPORTANT -->
   <script src="./script.js"></script>
-
 </body>
 </html>
