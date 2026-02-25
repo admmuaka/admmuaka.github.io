@@ -1,194 +1,210 @@
-// ========= Projects data (MODIFIE ICI) =========
-const projects = [
-  {
-    title: "Predictive Maintenance — Aéronautique (Casse outillages)",
-    tag: "predictive",
-    summary: "Modélisation du risque de casse + exploration facteurs (site, client, catégorie) pour guider maintenance et stock.",
-    methods: ["Random Forest", "GLM", "Feature engineering", "Metrics"],
-    impact: "Priorisation des risques + meilleure visibilité sur les causes et la récurrence.",
-    links: {
-      code: "https://github.com/",
-      demo: ""
-    }
-  },
-  {
-    title: "NLP — Extraction pièces cassées depuis logs techniques",
-    tag: "nlp",
-    summary: "Pipeline spaCy/Transformers pour extraire PART/ACTION/OBS/QTY dans des descriptions de réparation.",
-    methods: ["spaCy", "xlm-roberta", "NER", "Evaluation"],
-    impact: "Transformation de texte brut en variables structurées pour analyses + prédiction.",
-    links: {
-      code: "https://github.com/",
-      demo: ""
-    }
-  },
-  {
-    title: "Séries temporelles — Prévision demandes SAV",
-    tag: "predictive",
-    summary: "Démarche complète : nettoyage, décomposition, stationnarité, modélisation SARIMA, validation, prévision.",
-    methods: ["SARIMA", "Stationarity", "Backtesting"],
-    impact: "Aide à anticiper la charge et planifier les ressources.",
-    links: {
-      code: "https://github.com/",
-      demo: ""
-    }
-  },
-  {
-    title: "Pricing — Marine Liability (Actuariat)",
-    tag: "risk",
-    summary: "Cadre ratemaking : fréquence/sévérité, experience rating, hypothèses, recommandations de prime.",
-    methods: ["Frequency-Severity", "GLM", "Experience rating"],
-    impact: "Base technique claire pour tarification et pilotage du risque.",
-    links: {
-      code: "https://github.com/",
-      demo: ""
-    }
-  },
-  {
-    title: "Power BI — Dashboard qualité & suivi SAV",
-    tag: "bi",
-    summary: "KPIs, filtres, tendances, segments (site/région/client) pour lecture rapide par les équipes.",
-    methods: ["Power BI", "DAX", "Storytelling"],
-    impact: "Décision plus rapide et alignement des équipes sur les priorités.",
-    links: {
-      code: "",
-      demo: ""
-    }
-  }
-];
-
-// ========= UI =========
-const grid = document.getElementById("projectsGrid");
-const pills = document.querySelectorAll(".pill");
-const searchInput = document.getElementById("searchInput");
-const yearEl = document.getElementById("year");
-const statProjects = document.getElementById("statProjects");
-const themeBtn = document.getElementById("themeBtn");
-
-yearEl.textContent = new Date().getFullYear();
-statProjects.textContent = String(projects.length);
-
-let activeFilter = "all";
-let query = "";
-
-function tagLabel(tag){
-  const map = {
-    predictive: "Prédictif",
-    nlp: "NLP",
-    risk: "Risk/Actuariat",
-    bi: "Power BI"
-  };
-  return map[tag] || tag;
+:root{
+  --bg:#070A12;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --txt:#E9ECF4;
+  --muted:rgba(233,236,244,.72);
+  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --r:18px;
 }
 
-function render(){
-  const q = query.trim().toLowerCase();
-
-  const filtered = projects.filter(p => {
-    const okFilter = (activeFilter === "all") || (p.tag === activeFilter);
-    const hay = (p.title + " " + p.summary + " " + p.methods.join(" ") + " " + p.impact).toLowerCase();
-    const okSearch = !q || hay.includes(q);
-    return okFilter && okSearch;
-  });
-
-  grid.innerHTML = filtered.map(p => `
-    <article class="card glass project">
-      <div class="proj-top">
-        <span class="tag mono">${tagLabel(p.tag)}</span>
-        <span class="tag mono">Case study</span>
-      </div>
-
-      <h3 class="proj-title">${escapeHtml(p.title)}</h3>
-      <p class="proj-desc">${escapeHtml(p.summary)}</p>
-
-      <div class="proj-meta">
-        ${p.methods.slice(0,4).map(m => `<span class="meta mono">${escapeHtml(m)}</span>`).join("")}
-      </div>
-
-      <p class="proj-desc" style="margin-top:10px;">
-        <span class="mono">Impact:</span> ${escapeHtml(p.impact)}
-      </p>
-
-      <div class="proj-actions">
-        ${p.links.code ? `<a class="link" target="_blank" rel="noreferrer" href="${p.links.code}">Code</a>` : ""}
-        ${p.links.demo ? `<a class="link secondary" target="_blank" rel="noreferrer" href="${p.links.demo}">Demo</a>` : ""}
-      </div>
-    </article>
-  `).join("");
-
-  if(filtered.length === 0){
-    grid.innerHTML = `<div class="card glass" style="padding:16px;">
-      <p class="muted">Aucun projet ne correspond à ce filtre / recherche.</p>
-    </div>`;
-  }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--txt);
+  background: radial-gradient(1100px 700px at 20% 20%, rgba(110,66,255,.25), transparent 60%),
+              radial-gradient(900px 700px at 80% 40%, rgba(0,209,255,.18), transparent 55%),
+              radial-gradient(1200px 900px at 40% 90%, rgba(0,255,163,.10), transparent 60%),
+              var(--bg);
+  overflow-x:hidden;
 }
 
-function escapeHtml(str){
-  return String(str)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+.bg-grid{
+  position:fixed; inset:0;
+  background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(closest-side, rgba(0,0,0,.75), transparent);
+  opacity:.35;
+  pointer-events:none;
+}
+.bg-orb{
+  position:fixed; width:520px; height:520px; border-radius:999px;
+  filter: blur(40px);
+  opacity:.35;
+  pointer-events:none;
+}
+.orb-1{left:-120px; top:120px; background:rgba(110,66,255,.65)}
+.orb-2{right:-140px; top:260px; background:rgba(0,209,255,.55)}
+.noise{
+  position:fixed; inset:0; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
-// Filters
-pills.forEach(btn => {
-  btn.addEventListener("click", () => {
-    pills.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    activeFilter = btn.dataset.filter;
-    render();
-  });
-});
+.container{max-width:1120px; margin:0 auto; padding:92px 20px 70px}
 
-// Search
-searchInput.addEventListener("input", (e) => {
-  query = e.target.value || "";
-  render();
-});
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+  backdrop-filter: blur(12px);
+  background:rgba(7,10,18,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.brand{display:flex; align-items:center; gap:10px}
+.logo-dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(90deg,#6e42ff,#00d1ff)}
+.brand-name{font-weight:700}
+.brand-tag{color:var(--muted)}
+.nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.nav a{color:var(--muted); text-decoration:none}
+.nav a:hover{color:var(--txt)}
 
-// Theme toggle (simple)
-let alt = false;
-themeBtn.addEventListener("click", () => {
-  alt = !alt;
-  document.documentElement.style.setProperty("--bg", alt ? "#06050D" : "#070A12");
-  document.documentElement.style.setProperty("--bg2", alt ? "#050612" : "#050812");
-  document.documentElement.style.setProperty("--neon1", alt ? "#FF2BD6" : "#7C3AED");
-  document.documentElement.style.setProperty("--neon2", alt ? "#00FFA8" : "#22D3EE");
-  document.documentElement.style.setProperty("--neon3", alt ? "#FFD000" : "#A3FF12");
-});
+.mono{font-family:var(--mono)}
+.tiny{font-size:12px}
+.muted{color:var(--muted)}
 
-// Typing effect
-const typeTarget = document.getElementById("typeTarget");
-const phrases = [
-  "un projet prédictif maintenance + NLP 💫",
-  "un dashboard Power BI orienté décision",
-  "un modèle risk/actuariat (pricing) data-driven",
-  "un portfolio prêt recruteur (case studies)"
-];
-let pi = 0, ci = 0, deleting = false;
+.hero{display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:start; padding-top:18px}
+@media (max-width: 920px){ .hero{grid-template-columns:1fr} }
 
-function tick(){
-  const current = phrases[pi];
-  if(!deleting){
-    ci++;
-    typeTarget.textContent = current.slice(0, ci);
-    if(ci >= current.length){
-      deleting = true;
-      setTimeout(tick, 900);
-      return;
-    }
-  }else{
-    ci--;
-    typeTarget.textContent = current.slice(0, ci);
-    if(ci <= 0){
-      deleting = false;
-      pi = (pi + 1) % phrases.length;
-    }
-  }
-  setTimeout(tick, deleting ? 25 : 45);
+.eyebrow{color:var(--muted); margin:0 0 12px}
+.title{font-size:56px; line-height:1.02; margin:0 0 14px; letter-spacing:-.02em}
+@media (max-width: 560px){ .title{font-size:40px} }
+
+.neon{
+  background: linear-gradient(90deg, #6e42ff, #00d1ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.subtitle{color:var(--muted); margin:0 0 16px; max-width:58ch}
+
+.typing{display:flex; gap:10px; align-items:center; margin:10px 0 16px}
+.cursor{width:10px; height:18px; display:inline-block; background:rgba(233,236,244,.9); animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 14px}
+
+.chips{display:flex; gap:10px; flex-wrap:wrap}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  font-size:13px;
 }
 
-render();
-tick();
+.card{
+  border-radius: var(--r);
+  border:1px solid rgba(255,255,255,.10);
+  background: var(--card);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.glass{backdrop-filter: blur(12px)}
+.profile-card{padding:16px}
+.profile-top{display:flex; gap:14px; align-items:center}
+.avatar{position:relative; width:44px; height:44px}
+.avatar-ring{
+  position:absolute; inset:-3px; border-radius:999px;
+  background: conic-gradient(from 180deg, #6e42ff, #00d1ff, #6e42ff);
+  filter: blur(.2px);
+}
+.avatar-core{
+  position:absolute; inset:5px; border-radius:999px; background:rgba(7,10,18,.9);
+  border:1px solid rgba(255,255,255,.18);
+}
+.name{margin:0; font-weight:700}
+.role{margin:2px 0 0; color:var(--muted)}
+.divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+
+.kv{display:flex; flex-direction:column; gap:10px}
+.kv-row{display:flex; justify-content:space-between; gap:14px}
+.kv-k{color:var(--muted)}
+.kv-v{color:var(--txt); text-align:right}
+
+.quicklinks{display:flex; gap:12px; flex-wrap:wrap}
+.ql{color:var(--txt); text-decoration:none; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04)}
+.ql:hover{background:rgba(255,255,255,.07)}
+
+.mini-stats{display:flex; gap:10px; padding:14px; margin-top:12px}
+.stat{flex:1}
+.stat-k{color:var(--muted); margin:0}
+.stat-v{margin:6px 0 0; font-weight:700}
+
+.section{margin-top:54px}
+.section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
+.section-head h2{margin:0; font-size:28px}
+.section-sub{margin:6px 0 0; color:var(--muted)}
+
+.toolbar{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:16px 0}
+.filters{display:flex; gap:10px; flex-wrap:wrap}
+.pill{
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  color:var(--txt);
+  padding:8px 12px;
+  cursor:pointer;
+}
+.pill.active{border-color:rgba(0,209,255,.45); box-shadow: 0 0 0 3px rgba(0,209,255,.10) inset}
+.search input{
+  width:min(440px, 78vw);
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(7,10,18,.55);
+  color:var(--txt);
+  outline:none;
+}
+
+.grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+@media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 640px){ .grid{grid-template-columns:1fr} }
+
+.project{padding:14px}
+.project h3{margin:0 0 6px; font-size:16px}
+.project p{margin:0 0 10px; color:var(--muted); line-height:1.5}
+.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+.tag{
+  font-family:var(--mono);
+  font-size:11px;
+  padding:6px 8px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  color:rgba(233,236,244,.92);
+}
+
+.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+@media (max-width: 820px){ .grid-2{grid-template-columns:1fr} }
+
+.list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+.list li{margin:8px 0}
+
+.badges{display:flex; gap:10px; flex-wrap:wrap; padding:10px 0 0}
+.badge{padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); font-size:13px}
+
+.about{padding:16px}
+.footer{margin-top:52px; text-align:center; color:rgba(233,236,244,.65)}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  text-decoration:none;
+  color:var(--txt);
+  cursor:pointer;
+  font-weight:600;
+  background:rgba(255,255,255,.04);
+}
+.btn:hover{background:rgba(255,255,255,.07)}
+.btn-primary{
+  background:linear-gradient(90deg, rgba(110,66,255,.85), rgba(0,209,255,.75));
+  border-color:rgba(255,255,255,.18);
+}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-glass{background:rgba(255,255,255,.05)}
+.btn-ghost{background:transparent}
