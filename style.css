@@ -1,14 +1,14 @@
 :root{
-  --bg:#070A12;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --txt:#E9ECF4;
-  --muted:rgba(233,236,244,.72);
-  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --r:18px;
+  --bg:#0b0f1a;
+  --bg2:#0e1424;
+  --text:#e6f1ff;
+  --muted:#94a3b8;
+  --card:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.08);
+  --primary:#6c63ff;
+  --secondary:#00d4ff;
+  --shadow:0 20px 60px rgba(0,0,0,0.5);
 }
-
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
