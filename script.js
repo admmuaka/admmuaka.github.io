@@ -1,3 +1,4 @@
+alert("script.js chargé ✅");
 const i18n = {
   fr: {
     nav_projects: "Projets",
