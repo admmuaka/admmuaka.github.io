@@ -1,13 +1,13 @@
 :root{
-  --bg:#ffffff;
-  --bg2:#f4f7fb;
-  --text:#0f172a;
-  --muted:#475569;
-  --card:#ffffff;
-  --border:#e2e8f0;
-  --primary:#2563eb;
-  --secondary:#0ea5e9;
-  --shadow:0 10px 30px rgba(0,0,0,0.08);
+  --bg:#0c0c0f;
+  --bg2:#12121a;
+  --text:#f8fafc;
+  --muted:#a1a1aa;
+  --card:#18181f;
+  --border:#27272a;
+  --primary:#a78bfa;
+  --secondary:#facc15;
+  --shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
