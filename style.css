@@ -141,3 +141,6 @@ input::placeholder{color:rgba(184,176,217,.78)}
 
 .footer{margin-top:60px; color:var(--muted); text-align:center}
 .mono{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace}
+body {
+  background: red !important;
+}
