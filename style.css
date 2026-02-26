@@ -1,17 +1,15 @@
 :root{
-  --bg:#2f3640;
-  --bg2:#3b4250;
+  --bg:#FFFFFF;
+  --bg2:#F4F6FA;
 
-  --text:#f1f2f6;
-  --muted:#c0c6d4;
+  --text:#111827;
+  --muted:#6B7280;
 
-  --card:#f5f6fa;
-  --border:#dcdde1;
+  --card:#FFFFFF;
+  --border:rgba(0,0,0,.08);
 
-  --primary:#ff4757;     /* rouge data */
-  --secondary:#ffa502;   /* orange accent */
-
-  --shadow:0 10px 30px rgba(0,0,0,0.25);
+  --primary:#4F46E5;    /* petite touche couleur */
+  --secondary:#22C55E;  /* accent léger */
 }
 *{box-sizing:border-box}
 html,body{height:100%}
