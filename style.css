@@ -212,5 +212,41 @@ body{
 .btn-primary:hover{filter:brightness(1.06)}
 .btn-glass{background:rgba(255,255,255,.05)}
 .btn-ghost{background:transparent}
+/* BACKGROUND */
+body{
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+}
 
+/* CARDS blanches comme sur le template */
+.card{
+  background: var(--card);
+  color:#2f3640;
+}
+
+/* TITRES avec accent rouge */
+.neon{
+  color: var(--primary);
+}
+
+/* BOUTONS */
+.btn-primary{
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border:none;
+  color:#fff;
+}
+
+/* TOPBAR */
+.topbar{
+  background: rgba(47,54,64,0.85);
+  color: white;
+}
+
+/* LINKS */
+.nav a{
+  color:#dcdde1;
+}
+
+.nav a:hover{
+  color:white;
+}
 
