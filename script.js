@@ -1,4 +1,3 @@
-alert("script.js chargé ✅");
 const i18n = {
   fr: {
     nav_projects: "Projets",
@@ -224,7 +223,7 @@ function setLang(lang) {
 }
 
 let typingTimer = null;
-function startHeroTyping(lang) {
+function startTyping(lang) {
   const target = document.getElementById("typeTarget");
   if (!target) return;
 
