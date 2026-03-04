@@ -381,4 +381,4 @@ function startHeroTyping(lang){
   }, 22); // vitesse (plus petit = plus rapide)
 }
 
-/* IMPORTANT: dans setLang(lang), remplace l'appel startTyping(lang) par startHeroTyping(lang) */
+
