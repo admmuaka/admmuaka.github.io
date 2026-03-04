@@ -224,7 +224,7 @@ function setLang(lang) {
 }
 
 let typingTimer = null;
-function startTyping(lang) {
+function startHeroTyping(lang) {
   const target = document.getElementById("typeTarget");
   if (!target) return;
 
@@ -322,3 +322,63 @@ document.getElementById("langBtn")?.addEventListener("click", () => {
 // init
 const saved = localStorage.getItem("portfolio_lang");
 setLang(saved === "en" ? "en" : "fr");
+let heroTimer = null;
+
+function heroLines(lang){
+  if (lang === "en") {
+    return [
+      "Hi,",
+      "I’m Audrey Muaka.",
+      "Data Scientist.",
+      "Data Analyst.",
+      "Statistician.",
+      "Actuary.",
+      "",
+      "I love creative work —",
+      "turning ideas into clear, useful solutions.",
+      "",
+      "I turn technical data into decisions and forecasts."
+    ];
+  }
+
+  return [
+    "Salut,",
+    "Je suis Audrey Muaka.",
+    "Data Scientist.",
+    "Data Analyste.",
+    "Statisticienne.",
+    "Actuaire.",
+    "",
+    "J’aime les métiers créatifs —",
+    "transformer des idées en solutions claires et utiles.",
+    "",
+    "Je transforme des données techniques en décisions et prévisions."
+  ];
+}
+
+function startHeroTyping(lang){
+  const el = document.getElementById("heroType");
+  if (!el) return;
+
+  clearInterval(heroTimer);
+
+  const lines = heroLines(lang);
+  const fullText = lines.join("\n");
+
+  let i = 0;               // index caractères
+  let deleting = false;    // option si tu veux effacer à la fin (ici non)
+  el.textContent = "";
+
+  heroTimer = setInterval(() => {
+    // écrire petit à petit
+    i++;
+    el.textContent = fullText.slice(0, i);
+
+    // stop quand fini
+    if (i >= fullText.length) {
+      clearInterval(heroTimer);
+    }
+  }, 22); // vitesse (plus petit = plus rapide)
+}
+
+/* IMPORTANT: dans setLang(lang), remplace l'appel startTyping(lang) par startHeroTyping(lang) */
