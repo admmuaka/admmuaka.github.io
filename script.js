@@ -1,3 +1,9 @@
+let typingTimer = null;
+let activeFilter = "all";
+let heroTimer = null;
+
+
+
 const i18n = {
   fr: {
     nav_projects: "Projets",
@@ -223,7 +229,7 @@ function setLang(lang) {
   localStorage.setItem("portfolio_lang", lang);
 }
 
-let typingTimer = null;
+/* let typingTimer = null;*/
 function startTyping(lang) {
   const target = document.getElementById("typeTarget");
   if (!target) return;
@@ -249,7 +255,7 @@ function startTyping(lang) {
   }, 60);
 }
 
-let activeFilter = "all";
+/*let activeFilter = "all";*/
 function renderProjects() {
   const lang = document.documentElement.dataset.lang || "fr";
   const grid = document.getElementById("projectsGrid");
@@ -322,7 +328,7 @@ document.getElementById("langBtn")?.addEventListener("click", () => {
 // init
 const saved = localStorage.getItem("portfolio_lang");
 setLang(saved === "en" ? "en" : "fr");
-let heroTimer = null;
+/*let heroTimer = null;*/
 
 function heroLines(lang){
   if (lang === "en") {
