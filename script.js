@@ -218,6 +218,7 @@ function setLang(lang) {
   renderProjects();
 
   // typing line
+  startHeroTyping(lang);
   startTyping(lang);
   localStorage.setItem("portfolio_lang", lang);
 }
