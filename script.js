@@ -327,9 +327,11 @@ document.getElementById("langBtn")?.addEventListener("click", () => {
 });
 
 // init
-document.addEventListener("DOMContentLoaded", () =>{
-const saved = localStorage.getItem("portfolio_lang");
-setLang(saved === "en" ? "en" : "fr");});
+// init
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("portfolio_lang");
+  setLang(saved === "en" ? "en" : "fr");
+});
 /*let heroTimer = null;*/
 
 /*function heroLines(lang){
