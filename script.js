@@ -330,7 +330,7 @@ const saved = localStorage.getItem("portfolio_lang");
 setLang(saved === "en" ? "en" : "fr");
 /*let heroTimer = null;*/
 
-function heroLines(lang){
+/*function heroLines(lang){
   if (lang === "en") {
     return [
       "Hi,",
@@ -386,5 +386,95 @@ function startHeroTyping(lang){
     }
   }, 22); // vitesse (plus petit = plus rapide)
 }
+*/
+// ===== HERO: phrase par phrase (écrire -> pause -> effacer -> suivante) =====
+let heroTimeout = null;
 
+function heroPhrases(lang) {
+  return (lang === "en")
+    ? [
+        "Hi.",
+        "I’m Audrey Muaka.",
+        "Data Scientist.",
+        "Data Analyst.",
+        "Statistician.",
+        "Actuary.",
+        "I love creative work.",
+        "I turn technical data into decisions and forecasts."
+      ]
+    : [
+        "Bonjour.",
+        "Je suis Audrey Muaka.",
+        "Data Scientist.",
+        "Data Analyste.",
+        "Statisticienne.",
+        "Actuaire.",
+        "J’aime les métiers créatifs.",
+        "Je transforme des données techniques en décisions et prévisions."
+      ];
+}
+
+function stopHeroLoop() {
+  if (heroTimeout) clearTimeout(heroTimeout);
+  heroTimeout = null;
+}
+
+function startHeroLoop(lang) {
+  const el = document.getElementById("heroType");
+  if (!el) return;
+
+  stopHeroLoop();
+  el.textContent = "";
+
+  const phrases = heroPhrases(lang);
+
+  // réglages (tu peux ajuster)
+  const typeSpeed = 45;     // vitesse écriture (ms)
+  const deleteSpeed = 28;   // vitesse effacement
+  const holdAfterType = 900;  // pause après phrase écrite
+  const holdAfterDelete = 250; // pause après effacement
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function tick() {
+    const phrase = phrases[phraseIndex];
+
+    if (!deleting) {
+      // écrire
+      charIndex++;
+      el.textContent = phrase.slice(0, charIndex);
+
+      if (charIndex >= phrase.length) {
+        // phrase terminée -> pause -> passer en mode effacement
+        heroTimeout = setTimeout(() => {
+          deleting = true;
+          tick();
+        }, holdAfterType);
+        return;
+      }
+
+      heroTimeout = setTimeout(tick, typeSpeed);
+
+    } else {
+      // effacer
+      charIndex--;
+      el.textContent = phrase.slice(0, Math.max(0, charIndex));
+
+      if (charIndex <= 0) {
+        // phrase effacée -> pause -> prochaine phrase
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+
+        heroTimeout = setTimeout(tick, holdAfterDelete);
+        return;
+      }
+
+      heroTimeout = setTimeout(tick, deleteSpeed);
+    }
+  }
+
+  tick();
+}
 
