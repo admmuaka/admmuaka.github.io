@@ -329,7 +329,7 @@ body{
 }*/
 
 /* curseur un peu plus visible dans un grand titre */
-.title .cursor{
+/*.title .cursor{
   width:10px;
   height:1em;
   display:inline-block;
@@ -337,7 +337,7 @@ body{
   background: rgba(17,24,39,.65);
   animation: blink 1s steps(1) infinite;
 }
-@keyframes blink{50%{opacity:0}}
+@keyframes blink{50%{opacity:0}} */
 
 
 /* #heroType {
