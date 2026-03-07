@@ -357,6 +357,13 @@ body{
 .title{
     min-height: 4.8em;
 }
+#typeTarget{
+  display: inline-block;
+  width: 34ch;
+}
 
+.typing{
+  min-height: 1.8em;
+}
   
 
