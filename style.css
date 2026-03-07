@@ -328,14 +328,14 @@ body{
 }*/
 
 /* curseur un peu plus visible dans un grand titre */
-.title .cursor{
+/*.title .cursor{
   width:10px;
   height:1em;
   display:inline-block;
   margin-left:6px;
   background: rgba(17,24,39,.65);
   animation: blink 1s steps(1) infinite;
-}
+}*/
 @keyframes blink{50%{opacity:0}}
 
 
