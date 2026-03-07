@@ -10,6 +10,10 @@
 
   --primary:#4F46E5;    /* petite touche couleur */
   --secondary:#22C55E;  /* accent léger */
+
+  --sans:"Space Grotesk", system-ui, sans-serif;
+  --mono:"JetBrains Mono", monospace;
+  --r:18px;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -317,10 +321,10 @@ body{
   color: #fff !important;
 }
 /* HERO multi-line typing */
-#heroType{
+/*#heroType{
   white-space: pre-line;          /* garde les retours à la ligne */
   display:inline-block;
-}
+}*/
 
 /* curseur un peu plus visible dans un grand titre */
 .title .cursor{
