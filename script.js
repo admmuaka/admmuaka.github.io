@@ -398,14 +398,14 @@ function heroPhrases(lang) {
   return (lang === "en")
     ? [
         "Hi.",
-        "I’m Audrey Muaka.",
-        "Data Scientist.",
-        "Data Analyst.",
-        "Statistician.",
+        "I’m Audrey Muaka",
+        "Data Scientist",
+        "Data Analyst",
+        "Statistician",
       ]
     : [
         "Bonjour.",
-        "Je suis Audrey Muaka.",
+        "Je suis Audrey Muaka",
         "Data Scientist",
         "Data Analyste",
         "Statisticienne",
