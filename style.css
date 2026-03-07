@@ -336,3 +336,8 @@ body{
 #heroType{
   white-space: nowrap;
 }
+#heroType {
+  white-space: normal;
+  max-width: 22ch;
+  line-height: 1.3;
+}
