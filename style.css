@@ -333,9 +333,7 @@ body{
 }
 @keyframes blink{50%{opacity:0}}
 
-#heroType{
-  white-space: nowrap;
-}
+
 #heroType {
   white-space: normal;
   max-width: 22ch;
