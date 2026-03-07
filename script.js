@@ -15,7 +15,7 @@ const i18n = {
     hero_title_2: "décisions",
     hero_title_3: "et",
     hero_title_4: "prévisions",
-    hero_subtitle: "Focus : maintenance prédictive (aéronautique), extraction d’informations (NLP), modélisation (GLM/RF), séries temporelles, dashboards Power BI, et projets actuariat (pricing).",
+    /*hero_subtitle: "Focus : maintenance prédictive (aéronautique), extraction d’informations (NLP), modélisation (GLM/RF), séries temporelles, dashboards Power BI, et projets actuariat (pricing).",*/
     hero_now: "Actuellement :",
     hero_cta_projects: "Voir les projets",
     hero_cta_contact: "Me contacter",
