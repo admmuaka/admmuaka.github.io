@@ -3,6 +3,7 @@
   --bg2:#F4F6FA;
 
   --text:#111827;
+  --txt: var(--text);
   --muted:#6B7280;
 
   --card:#FFFFFF;
@@ -322,7 +323,7 @@ body{
 }
 /* HERO multi-line typing */
 /*#heroType{
-  white-space: pre-line;          /* garde les retours à la ligne */
+  white-space: pre-line;         
   display:inline-block;
 }*/
 
