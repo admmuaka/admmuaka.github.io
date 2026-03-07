@@ -402,19 +402,14 @@ function heroPhrases(lang) {
         "Data Scientist.",
         "Data Analyst.",
         "Statistician.",
-        "Actuary.",
-        "I love creative work.",
-        "I turn technical data into decisions and forecasts."
       ]
     : [
         "Bonjour.",
         "Je suis Audrey Muaka.",
-        "Data Scientist.",
-        "Data Analyste.",
-        "Statisticienne.",
-        "Actuaire.",
-        "J’aime les métiers créatifs.",
-        "Je transforme des données techniques en décisions et prévisions."
+        "Data Scientist",
+        "Data Analyste",
+        "Statisticienne",
+        
       ];
 }
 
