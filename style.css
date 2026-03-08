@@ -412,7 +412,7 @@ body{
   0%{width:0%}
   100%{width:100%}
 }
-*/
+
 
 #preloader{
   position: fixed;
@@ -468,6 +468,85 @@ body{
     opacity: 1;
   }
 }
+*/
 
+/* ================= PRELOADER ================= */
+
+#preloader{
+  position: fixed;
+  inset: 0;
+  background: #F7F8FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+/* container animation */
+.loader-scene{
+  width: min(80vw, 420px);
+  text-align: center;
+}
+
+/* rocket */
+.rocket{
+  font-size: 42px;
+  width: fit-content;
+  animation: rocketMove 2.2s ease-in-out forwards;
+}
+
+/* progress line */
+.loader-line{
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: rgba(17,24,39,.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 18px 0 16px;
+}
+
+/* animated progress */
+.loader-line::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  width:0%;
+  background:#111827;
+  animation: lineLoad 2.2s ease-in-out forwards;
+}
+
+/* text */
+.loader-text{
+  margin:0;
+  font-family: var(--mono);
+  color:#6B7280;
+  font-size:14px;
+  letter-spacing:.08em;
+}
+
+/* animations */
+
+@keyframes rocketMove{
+  0%{
+    transform: translateX(0) rotate(0deg);
+    opacity:0.2;
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  100%{
+    transform: translateX(calc(min(80vw,420px) - 48px)) rotate(8deg);
+    opacity:1;
+  }
+}
+
+@keyframes lineLoad{
+  from{width:0%}
+  to{width:100%}
+}
   
 
