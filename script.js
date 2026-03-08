@@ -506,5 +506,13 @@ window.addEventListener("load", () => {
   }, 2400);
 });
 
+const toggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+
 
 
