@@ -506,13 +506,31 @@ window.addEventListener("load", () => {
   }, 2400);
 });
 
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+  if (toggle && navLinks) {
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      const clickedInsideMenu = navLinks.contains(e.target);
+      const clickedToggle = toggle.contains(e.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        navLinks.classList.remove("active");
+      }
+    });
+  }
 });
-
 
 
 
