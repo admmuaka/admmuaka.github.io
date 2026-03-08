@@ -660,7 +660,7 @@ body{
 @media (max-width:768px){
 
   .topbar{
-    padding:14px 12px;
+    padding:14px 8px 14px 12px;
   }
 
   .nav{
