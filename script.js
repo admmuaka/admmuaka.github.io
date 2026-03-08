@@ -476,7 +476,8 @@ function startHeroLoop(lang) {
 
   tick();
 }
-window.addEventListener("load", () => {
+
+/*window.addEventListener("load", () => {
 
   setTimeout(() => {
 
@@ -490,5 +491,20 @@ window.addEventListener("load", () => {
 
   },1800);
 
+});*/
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    if (!preloader) return;
+
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 600);
+  }, 2400);
 });
+
+Reply
 
