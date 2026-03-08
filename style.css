@@ -371,5 +371,48 @@ body{
 .typing{
   min-height: 1.8em;
 }
+
+#preloader{
+  position:fixed;
+  inset:0;
+  background:#F7F8FA;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+
+.loader-content{
+  text-align:center;
+}
+
+.loader-name{
+  font-size:40px;
+  margin-bottom:30px;
+  font-weight:700;
+}
+
+.loader-bar{
+  width:200px;
+  height:6px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.loader-progress{
+  height:100%;
+  width:0%;
+  background:#6366F1;
+  animation:loadbar 1.8s ease forwards;
+}
+
+@keyframes loadbar{
+  0%{width:0%}
+  100%{width:100%}
+}
+
+
   
 
