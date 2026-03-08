@@ -90,7 +90,7 @@ body{
 .subtitle{color:var(--muted); margin:0 0 16px; max-width:58ch}
 
 .typing{display:flex; gap:10px; align-items:center; margin:10px 0 16px}
-.cursor{width:10px; height:18px; display:inline-block; background:rgba(233,236,244,.9); animation:blink 1s steps(1) infinite}
+/*.cursor{width:10px; height:18px; display:inline-block; background:rgba(233,236,244,.9); animation:blink 1s steps(1) infinite}*/
 @keyframes blink{50%{opacity:0}}
 
 .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 14px}
