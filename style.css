@@ -622,3 +622,18 @@ body{
     width:100%;
   }
 }
+@media (max-width:768px){
+  .topbar{
+    padding:14px 12px;
+  }
+
+  .nav{
+    margin-left:auto;
+  }
+
+  .menu-toggle{
+    display:block;
+    margin:0;
+    padding:0;
+  }
+}
