@@ -53,9 +53,23 @@ body{
 
 .container{max-width:1120px; margin:0 auto; padding:92px 20px 70px}
 
-.topbar{
+/*.topbar{
   position:sticky; top:0; z-index:10;
   display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+  backdrop-filter: blur(12px);
+  background:rgba(7,10,18,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+} */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:14px 20px;
   backdrop-filter: blur(12px);
   background:rgba(7,10,18,.55);
@@ -638,7 +652,7 @@ body{
   }
 } */
 
-/
+
 .menu-toggle{
   display:none;
   font-size:32px;
@@ -672,7 +686,7 @@ body{
 
   .nav{
     position:absolute;
-    right:8px;
+    right:0;
     top:50%;
     transform:translateY(-50%);
     margin-left:0;
