@@ -87,7 +87,9 @@ body{
 .tiny{font-size:12px}
 .muted{color:var(--muted)}
 
-.hero{display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:start; padding-top:18px}
+/*.hero{display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:start; padding-top:18px}*/
+.hero{display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; padding-top:40px}
+
 @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
 
 .eyebrow{color:var(--muted); margin:0 0 12px}
@@ -760,4 +762,7 @@ body{
   0%{ transform: translateY(0); }
   50%{ transform: translateY(-10px); }
   100%{ transform: translateY(0); }
+}
+.hero-left{
+  max-width:620px;
 }
