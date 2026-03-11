@@ -407,8 +407,11 @@ function heroPhrases(lang) {
         "Bonjour",
         "Je suis Audrey Muaka",
         "Data Scientist",
-        "Data Analyste",
+        //"Data Analyste",
         "Statisticienne",
+        "Exploratrice de données",
+        "J'aime comprendre les données,découvrir des patterns, et construire des modèles qui aident à prendre de meilleures décisions",
+        
         
       ];
 }
