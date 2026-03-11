@@ -397,15 +397,17 @@ let heroTimeout = null;
 function heroPhrases(lang) {
   return (lang === "en")
     ? [
-        "Hi",
-        "I’m Audrey Muaka",
-        "Data Scientist",
-        "Data Analyst",
-        "Statistician",
+       "Hello 👋",
+       "I'm Audrey Muaka",
+       "Data Scientist",
+       "Statistician",
+       "I explore data",
+       "discover patterns",
+       "and build models that support better decisions"
       ]
     : [
-        "Bonjour",
-        "Je suis Audrey Muaka",
+        "Hello 👋",
+        "Je suis Audrey",
         "Data Scientist",
         //"Data Analyste",
         "Statisticienne",
