@@ -734,3 +734,30 @@ body{
     width: 100%;
   }
 }
+
+.hero-right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-visual{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-illustration{
+  width:min(100%, 430px);
+  height:auto;
+  display:block;
+  animation: floatHero 4s ease-in-out infinite;
+  filter: drop-shadow(0 18px 35px rgba(15,23,42,.12));
+}
+
+@keyframes floatHero{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+  100%{ transform: translateY(0); }
+}
