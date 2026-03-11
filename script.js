@@ -398,7 +398,7 @@ function heroPhrases(lang) {
   return (lang === "en")
     ? [
        "Hello 👋",
-       "I'm Audrey Muaka",
+       "I'm Audrey",
        "Data Scientist",
        "Statistician",
        "I explore data",
