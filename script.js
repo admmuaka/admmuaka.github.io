@@ -412,8 +412,7 @@ function heroPhrases(lang) {
         //"Data Analyste",
         "Statisticienne",
         "Exploratrice de données",
-        "J'aime comprendre les données",
-        "découvrir des patterns", 
+        "J'aime découvrir des patterns", 
         "et construire des modèles qui aident à prendre de meilleures décisions",
         
         
