@@ -780,7 +780,7 @@ body{
   overflow: hidden;
 }
 
-.skills-lines{
+/*.skills-lines{
   position: absolute;
   inset: 0;
   width: 100%;
@@ -791,7 +791,7 @@ body{
 .skills-lines line{
   stroke: rgba(110, 160, 190, 0.28);
   stroke-width: 2;
-} 
+} */
 
 .skills-lines{
     display: none;
@@ -885,12 +885,13 @@ body{
   }
 }
 
-@media (max-width: 768px){
+/*@media (max-width: 768px){
   .skills-lines{
     display: none;
   }
+}
 
-/*.skills-map{
+.skills-map{
   padding: 10px;
 } */
 
