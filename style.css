@@ -895,3 +895,15 @@ body{
   padding: 10px;
 } */
 
+.section-head{
+  max-width: 760px;   /* même largeur que ta skills-map */
+  margin: 0 auto;     /* centre */
+  padding: 0 10px;
+}
+
+.section-sub{
+  font-size: 15px;
+  color: #6B7280;
+  margin-top: 6px;
+}
+
