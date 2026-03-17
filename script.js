@@ -57,7 +57,7 @@ const i18n = {
     skills_tools_title: "Outils",
     about_title: "À propos",
     about_sub: "Profil stats orienté impact et opérationnel.",
-    about_p1: "Data Scientist diplômée d’un Master en Statistiques Appliquées, spécialisée en data science, machine learning et analyse statistique.Expérience en Python, SQL, visualisation, modélisation prédictive et traitement de données. Compétente dans la conception et l’industrialisation de solutions data sur mesure, en lien étroit avec les besoins métiers.Forte appétence pour la résolution de problèmes complexes, la communication interdisciplinaire et les environnements dynamiques et internationaux.Intérêt particulier pour l’assurance, la finance , la transformation data & IA et les cas d’usage innovants (modélisation, IA générative, NLP, prévision)",
+    about_p1: "Data Scientist diplômée d’un Master en Statistiques Appliquées, spécialisée en data science et machine learning.J’accompagne les entreprises dans la transformation de leurs données en décisions concrètes grâce à la modélisation, la visualisation et l’analyse statistique.Mes compétences couvrent Python, SQL, la modélisation prédictive, le NLP et les séries temporelles.J’évolue avec aisance dans des environnements complexes, internationaux et orientés impact.Intéressée par les domaines de l’assurance, de la finance et des applications avancées de l’IA (NLP, IA générative, prévision).",
     //about_hint: "Astuce : on peut remplacer ce texte par une version “recruteur-friendly” en 6–8 lignes.",
     contact_title: "Contact",
     contact_sub: "On peut échanger sur un poste, un projet, ou une collaboration.",
@@ -118,7 +118,10 @@ const i18n = {
     skills_tools_title: "Tools",
     about_title: "About",
     about_sub: "Impact-driven, hands-on statistics profile.",
-    about_p1: "MSc in Statistics. I build end-to-end data solutions: exploration, Power BI dashboards → models (Python/R) → actionable insights. My work spans predictive maintenance (aerospace) and actuarial/pricing case studies.",
+    about_p1:"Data Scientist with a Master’s degree in Applied Statistics, specialized in data science and machine learninI help organizations transform data into actionable insights through statistical analysis, predictive modeling, and data visualization.My skill set includes Python, SQL, predictive modeling, NLP, and time series analysis.I thrive in complex, international, and impact-driven environments.Particularly interested in applications in insurance, finance, and advanced AI use cases (NLP, generative AI, forecasting).
+</p>
+",
+    //about_p1: "MSc in Statistics. I build end-to-end data solutions: exploration, Power BI dashboards → models (Python/R) → actionable insights. My work spans predictive maintenance (aerospace) and actuarial/pricing case studies.",
     //about_hint: "Tip: we can rewrite this into a recruiter-friendly 6–8 line summary.",
     contact_title: "Contact",
     contact_sub: "Happy to discuss roles, projects, or collaborations.",
