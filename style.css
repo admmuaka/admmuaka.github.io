@@ -849,20 +849,9 @@ body{
 
 @media (max-width: 768px){
   .skills-map{
-    height: 520px;
-  }
-
-  .skill-node{
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-}
-
-
-@media (max-width: 768px){
-  .skills-map{
-    height: 560px;
+    height: 620px;
     max-width: 100%;
+    padding: 12px;
   }
 
   .skill-node{
@@ -870,22 +859,32 @@ body{
     padding: 8px 12px;
   }
 
-  .skill-node:nth-of-type(1){ top: 50px !important; left: 22% !important; }  /* Python */
-  .skill-node:nth-of-type(2){ top: 90px !important; left: 55% !important; }  /* SQL */
-  .skill-node:nth-of-type(3){ top: 165px !important; left: 36% !important; } /* R */
+  .skill-node:nth-of-type(1){ top: 55px !important; left: 22% !important; }  /* Python */
+  .skill-node:nth-of-type(2){ top: 105px !important; left: 55% !important; } /* SQL */
+  .skill-node:nth-of-type(3){ top: 185px !important; left: 36% !important; } /* R */
 
-  .skill-node:nth-of-type(4){ top: 85px !important; left: 82% !important; }  /* scikit-learn */
-  .skill-node:nth-of-type(5){ top: 175px !important; left: 75% !important; } /* spaCy */
-  .skill-node:nth-of-type(6){ top: 250px !important; left: 82% !important; } /* Transformers */
+  .skill-node:nth-of-type(4){ top: 100px !important; left: 82% !important; } /* scikit-learn */
+  .skill-node:nth-of-type(5){ top: 195px !important; left: 76% !important; } /* spaCy */
+  .skill-node:nth-of-type(6){ top: 285px !important; left: 82% !important; } /* Transformers */
 
-  .skill-node:nth-of-type(7){ top: 250px !important; left: 55% !important; } /* NLP */
-  .skill-node:nth-of-type(8){ top: 330px !important; left: 83% !important; } /* Forecasting */
-  .skill-node:nth-of-type(9){ top: 410px !important; left: 70% !important; } /* Power BI */
+  .skill-node:nth-of-type(7){ top: 285px !important; left: 55% !important; } /* NLP */
+  .skill-node:nth-of-type(8){ top: 390px !important; left: 82% !important; } /* Forecasting */
+  .skill-node:nth-of-type(9){ top: 485px !important; left: 67% !important; } /* Power BI */
 
-  .skill-node:nth-of-type(10){ top: 365px !important; left: 36% !important; } /* Git */
-  .skill-node:nth-of-type(11){ top: 385px !important; left: 74% !important; } /* Docker */
-  .skill-node:nth-of-type(12){ top: 470px !important; left: 50% !important; } /* GitHub */
+  .skill-node:nth-of-type(10){ top: 430px !important; left: 36% !important; } /* Git */
+  .skill-node:nth-of-type(11){ top: 455px !important; left: 77% !important; } /* Docker */
+  .skill-node:nth-of-type(12){ top: 560px !important; left: 50% !important; } /* GitHub */
+
+  .skills-legend{
+    margin-top: 22px;
+    gap: 14px;
+  }
 }
+
+@media (max-width: 768px){
+  .skills-lines{
+    display: none;
+  }
 
 .skills-map{
   padding: 10px;
