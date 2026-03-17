@@ -119,7 +119,7 @@ const i18n = {
     about_title: "About",
     about_sub: "Impact-driven, hands-on statistics profile.",
     about_p1: "MSc in Statistics. I build end-to-end data solutions: exploration, Power BI dashboards → models (Python/R) → actionable insights. My work spans predictive maintenance (aerospace) and actuarial/pricing case studies.",
-    about_hint: "Tip: we can rewrite this into a recruiter-friendly 6–8 line summary.",
+    //about_hint: "Tip: we can rewrite this into a recruiter-friendly 6–8 line summary.",
     contact_title: "Contact",
     contact_sub: "Happy to discuss roles, projects, or collaborations.",
     contact_reach_title: "Get in touch",
