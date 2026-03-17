@@ -63,7 +63,7 @@ const i18n = {
     contact_sub: "On peut échanger sur un poste, un projet, ou une collaboration.",
     contact_reach_title: "Me joindre",
     contact_reach_sub: "Remplace les liens ci-dessous par les tiens :",
-    cv_sub: "Ajoute ton CV en PDF dans le repo (ex: assets/CV_Audrey_Muaka.pdf)",
+    cv_sub: "Mon CV",
     cv_download: "Télécharger le CV",
   },
   en: {
@@ -124,7 +124,7 @@ const i18n = {
     contact_sub: "Happy to discuss roles, projects, or collaborations.",
     contact_reach_title: "Get in touch",
     contact_reach_sub: "Replace the links below with yours:",
-    cv_sub: "Add your resume PDF to the repo (e.g., assets/CV_Audrey_Muaka.pdf)",
+    cv_sub: "My resume",
     cv_download: "Download resume",
   }
 };
