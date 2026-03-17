@@ -118,9 +118,7 @@ const i18n = {
     skills_tools_title: "Tools",
     about_title: "About",
     about_sub: "Impact-driven, hands-on statistics profile.",
-    about_p1:"Data Scientist with a Master’s degree in Applied Statistics, specialized in data science and machine learninI help organizations transform data into actionable insights through statistical analysis, predictive modeling, and data visualization.My skill set includes Python, SQL, predictive modeling, NLP, and time series analysis.I thrive in complex, international, and impact-driven environments.Particularly interested in applications in insurance, finance, and advanced AI use cases (NLP, generative AI, forecasting).
-</p>
-",
+    about_p1:"Data Scientist with a Master’s degree in Applied Statistics, specialized in data science and machine learnin I help organizations transform data into actionable insights through statistical analysis, predictive modeling, and data visualization.My skill set includes Python, SQL, predictive modeling, NLP, and time series analysis.I thrive in complex, international, and impact-driven environments.Particularly interested in applications in insurance, finance, and advanced AI use cases (NLP, generative AI, forecasting).",
     //about_p1: "MSc in Statistics. I build end-to-end data solutions: exploration, Power BI dashboards → models (Python/R) → actionable insights. My work spans predictive maintenance (aerospace) and actuarial/pricing case studies.",
     //about_hint: "Tip: we can rewrite this into a recruiter-friendly 6–8 line summary.",
     contact_title: "Contact",
