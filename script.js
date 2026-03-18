@@ -206,6 +206,16 @@ const projects = [
     }
   }
 ];
+function updateCV(lang) {
+  const cvBtn = document.getElementById("cvBtn");
+  if (!cvBtn) return;
+
+  if (lang === "en") {
+    cvBtn.href = "CV_Audrey_EN.pdf";
+  } else {
+    cvBtn.href = "CV_Audrey_FR.pdf";
+  }
+}
 
 function setLang(lang) {
   document.documentElement.setAttribute("lang", lang);
@@ -230,6 +240,7 @@ function setLang(lang) {
   /*startHeroTyping(lang);*/
   startHeroLoop(lang);
   startTyping(lang);
+  updateCV(lang);
   localStorage.setItem("portfolio_lang", lang);
 }
 
