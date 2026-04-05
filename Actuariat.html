@@ -1,1 +1,274 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Analyse actuarielle - Audrey Muaka" />
+  <title>Analyse actuarielle — Audrey Muaka</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F7F8FA;
+      --bg2:#EEF1F5;
+      --text:#111827;
+      --muted:#6B7280;
+      --card:#FFFFFF;
+      --border:rgba(17,24,39,.10);
+      --primary:#111827;
+      --secondary:#4B5563;
+      --sans:"Space Grotesk", system-ui, sans-serif;
+      --mono:"JetBrains Mono", monospace;
+      --r:20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px 20px 70px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:blur(14px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .logo-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#6e42ff,#00d1ff);
+    }
+
+    .brand-name{font-weight:700}
+    .brand-tag{color:var(--muted)}
+
+    .back-link{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:500;
+    }
+
+    .back-link:hover{color:var(--text)}
+
+    .hero{
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+
+    .eyebrow{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:13px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(32px,5vw,52px);
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+
+    .subtitle{
+      max-width:760px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      box-shadow:0 16px 50px rgba(15,23,42,.08);
+      padding:22px;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+    }
+
+    .card p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-family:var(--mono);
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 15px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.9);
+      color:var(--text);
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:#111827;
+      border-color:#111827;
+      color:#fff;
+    }
+
+    .btn-disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+
+    .section-note{
+      margin-top:26px;
+      padding:18px 20px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.65);
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .footer{
+      margin-top:42px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      font-family:var(--mono);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="logo-dot"></span>
+      <span class="brand-name">Audrey Muaka</span>
+      <span class="brand-tag">/ actuariat</span>
+    </a>
+
+    <a href="index.html" class="back-link">← Retour au portfolio</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Case study • Actuariat • Pricing</p>
+      <h1>Analyse actuarielle</h1>
+      <p class="subtitle">
+        Cette page regroupe les différentes déclinaisons du projet actuariel afin de montrer la même analyse
+        sous plusieurs angles : calcul et modélisation en Python, structuration sur Excel, et restitution
+        visuelle dans Power BI.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Python / Notebook</span>
+        <h3>Version Python</h3>
+        <p>
+          Analyse réalisée sous Python avec notebook, calculs actuariels, logique fréquence × sévérité,
+          hypothèses de pricing et exploration des résultats.
+        </p>
+        <a class="btn btn-primary" href="https://nbviewer.org/github/admmuaka/admmuaka.github.io/blob/main/actuaria.ipynb" target="_blank" rel="noreferrer">
+          Voir l’analyse Python
+        </a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Excel / Pricing</span>
+        <h3>Version Excel</h3>
+        <p>
+          Version orientée tableur pour présenter la structure de calcul, les hypothèses, les étapes du pricing
+          et la lecture plus métier de l’analyse.
+        </p>
+        <a class="btn btn-disabled" href="#">
+          Bientôt disponible
+        </a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Power BI / Dashboard</span>
+        <h3>Version Power BI</h3>
+        <p>
+          Version dédiée à la visualisation et à la restitution. Elle mettra en avant les indicateurs,
+          graphiques et conclusions clés du projet dans un format plus interactif.
+        </p>
+        <a class="btn btn-disabled" href="#">
+          Bientôt disponible
+        </a>
+      </article>
+    </section>
+
+    <div class="section-note">
+      L’objectif de cette page est de montrer qu’un même sujet peut être traité selon plusieurs formats :
+      analytique, opérationnel et décisionnel. Cela permet de valoriser à la fois la rigueur technique,
+      la lisibilité métier et la restitution visuelle.
+    </div>
+
+    <footer class="footer">
+      © <span id="year"></span> Audrey Muaka
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
