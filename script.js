@@ -195,7 +195,7 @@ const projects = [
       desc: "Analyse de sinistres (patterns/anomalies), approche fréquence×sévérité, prime pure, segmentation et hypothèses de pricing.",
       bullets: ["Frequency/Severity", "Experience rating", "Rapport de pricing"],
       linkLabel: "Voir le rapport",
-      link: "https://nbviewer.org/github/admmuaka/admmuaka.github.io/blob/main/actuaria.ipynb"
+      link: "Actuariat.html"
     },
     en: {
       title: "Actuarial — Marine Liability pricing (case study)",
