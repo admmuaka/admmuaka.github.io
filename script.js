@@ -204,7 +204,35 @@ const projects = [
       linkLabel: "View report",
       link: "#"
     }
+  },
+  {
+  id: "speech-recognition",
+  tags: ["predictive"],
+  fr: {
+    title: "Reconnaissance de commandes vocales (Deep Learning)",
+    desc: "Développement d’un modèle de classification audio pour reconnaître des commandes vocales à partir de signaux bruts. Transformation des signaux en spectrogrammes Mel puis apprentissage via un CNN 2D.",
+    bullets: [
+      "Audio → Mel Spectrogram (feature engineering)",
+      "CNN 2D (PyTorch)",
+      "Classification multi-classes",
+      "Analyse des erreurs & généralisation"
+    ],
+    linkLabel: "Voir le projet",
+    link: "#"
+  },
+  en: {
+    title: "Speech Command Recognition (Deep Learning)",
+    desc: "Built an audio classification model to recognize spoken commands from raw signals. Converted audio into Mel spectrograms and trained a 2D CNN for prediction.",
+    bullets: [
+      "Audio → Mel Spectrogram",
+      "2D CNN (PyTorch)",
+      "Multi-class classification",
+      "Error analysis & generalization"
+    ],
+    linkLabel: "View project",
+    link: "#"
   }
+}
 ];
 function updateCV(lang) {
   const cvBtn = document.getElementById("cvBtn");
