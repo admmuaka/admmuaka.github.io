@@ -218,7 +218,7 @@ const projects = [
       "Analyse des erreurs & généralisation"
     ],
     linkLabel: "Voir le projet",
-    link: "CNN_Project_FR"
+    link: "CNN_Project_FR.pdf"
   },
   en: {
     title: "Speech Command Recognition (Deep Learning)",
@@ -230,7 +230,7 @@ const projects = [
       "Error analysis & generalization"
     ],
     linkLabel: "View project",
-    link: "CNN_Project_EN"
+    link: "CNN_Project_EN.pdf"
   }
 }
 ];
