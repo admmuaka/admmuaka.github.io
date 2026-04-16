@@ -311,7 +311,7 @@ function renderProjects() {
     const tags = p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
     const link = data.link && data.link !== "#"
       ? `<a class="btn btn-glass" href="${data.link}" target="_blank" rel="noreferrer">${escapeHtml(data.linkLabel)}</a>`
-      : `<button class="btn btn-glass" type="button" onclick="alert('${lang === "fr" ? "Ajoute ton lien (repo, rapport, dashboard) dans script.js 🙂" : "Add your link (repo, report, dashboard) in script.js 🙂"}')">${escapeHtml(data.linkLabel)}</button>`;
+      : `<button class="btn btn-glass" type="button" onclick="alert('${lang === "fr" ? "Projet en cours de finalisation 😊" : "Project coming soon 😊"}')">${escapeHtml(data.linkLabel)}</button>`;
 
     return `
       <article class="card glass project">
