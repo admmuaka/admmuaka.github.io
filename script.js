@@ -218,7 +218,7 @@ const projects = [
       "Analyse des erreurs & généralisation"
     ],
     linkLabel: "Voir le projet",
-    link: "#"
+    link: "CNN_Project_FR"
   },
   en: {
     title: "Speech Command Recognition (Deep Learning)",
