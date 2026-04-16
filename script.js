@@ -230,7 +230,7 @@ const projects = [
       "Error analysis & generalization"
     ],
     linkLabel: "View project",
-    link: "#"
+    link: "CNN_Project_EN"
   }
 }
 ];
