@@ -202,7 +202,7 @@ const projects = [
       desc: "Claims analysis (patterns/anomalies), frequency×severity framework, pure premium, segmentation and pricing assumptions.",
       bullets: ["Frequency/Severity", "Experience rating", "Pricing report"],
       linkLabel: "View report",
-      link: "#"
+      link: "Actuarial_analysis.xlsx"
     }
   },
   {
