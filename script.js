@@ -131,7 +131,7 @@ const projects = [
       title: "Maintenance prédictive — analyse de la casse (aéronautique)",
       desc: "Prévision des demandes de réparation et identification des facteurs de casse (site, client, catégorie…). Modèles + métriques + recommandations.",
       bullets: ["Features catégorielles", "GLM / Random Forest", "Time-series (SARIMA)"],
-      linkLabel: "Voir le repo",
+      linkLabel: "Voir le rapport",
       link: "#"
     },
     en: {
@@ -149,7 +149,7 @@ const projects = [
       title: "NLP — extraction de pièces cassées (NER spaCy/Transformers)",
       desc: "Extraction d’entités (PART/ACTION/OBS/QTY) depuis des descriptions techniques pour structurer les données et alimenter l’analytique.",
       bullets: ["spaCy + xlm-roberta", "Évaluation & erreurs", "Structuration logs → variables"],
-      linkLabel: "Voir le repo",
+      linkLabel: "Voir le rapport",
       link: "#"
     },
     en: {
@@ -208,7 +208,7 @@ const projects = [
       "Classification multi-classes",
       "Analyse des erreurs & généralisation"
     ],
-    linkLabel: "Voir le projet",
+    linkLabel: "Voir le rapport",
     link: "CNN_Project_FR.pdf"
   },
   en: {
