@@ -132,7 +132,7 @@ const projects = [
       desc: "Prévision des demandes de réparation et identification des facteurs de casse pour optimiser la maintenance et la gestion des stocks",
       bullets: ["Features catégorielles(site, client, produit…)", "GLM / Random Forest(comparaison modèles)","Analyse des facteurs clés & recommandations"],
       linkLabel: "Voir le rapport",
-      link: "Présentation_SAV"
+      link: "Présentation_SAV.pdf"
     },
     en: {
       title: "Predictive maintenance — breakage analytics (aerospace)",
