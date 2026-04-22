@@ -129,8 +129,8 @@ const projects = [
     tags: ["predictive"],
     fr: {
       title: "Maintenance prédictive — analyse de la casse (aéronautique)",
-      desc: "Prévision des demandes de réparation et identification des facteurs de casse (site, client, catégorie…). Modèles + métriques + recommandations.",
-      bullets: ["Features catégorielles", "GLM / Random Forest", "Time-series (SARIMA)"],
+      desc: "Prévision des demandes de réparation et identification des facteurs de casse pour optimiser la maintenance et la gestion des stocks",
+      bullets: ["Features catégorielles(site, client, produit…)", "GLM / Random Forest(comparaison modèles)","Analyse des facteurs clés & recommandations"],
       linkLabel: "Voir le rapport",
       link: "#"
     },
