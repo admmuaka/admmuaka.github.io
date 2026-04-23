@@ -150,7 +150,7 @@ const projects = [
       desc: "Extraction d’entités (PART/ACTION/OBS/QTY) depuis des descriptions techniques pour structurer les données et alimenter l’analytique.",
       bullets: ["spaCy + xlm-roberta", "Évaluation & erreurs", "Structuration logs → variables"],
       linkLabel: "Voir le rapport",
-      link: "#"
+      link: "https://nbviewer.org/github/admmuaka/admmuaka.github.io/blob/main/analyse_textuelle.ipynb"
     },
     en: {
       title: "NLP — parts extraction from technical logs (spaCy/Transformers NER)",
