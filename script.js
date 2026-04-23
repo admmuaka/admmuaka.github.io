@@ -185,7 +185,7 @@ const projects = [
       title: "Actuariat — tarification Marine Liability (case study)",
       desc: "Analyse de sinistres (patterns/anomalies), approche fréquence×sévérité, prime pure, segmentation et hypothèses de pricing.",
       bullets: ["Frequency/Severity", "Experience rating", "Rapport de pricing"],
-      linkLabel: "Voir le rapport",
+      linkLabel: "Voir le projet",
       link: "Actuariat.html"
     },
     en: {
