@@ -237,7 +237,7 @@ const projects = [
       "Recommandations business"
     ],
     linkLabel: "Voir le projet",
-    link: "#"
+    link: "Churn.html"
   },
   en: {
     title: "Customer Churn Prediction — End-to-End Analysis",
