@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Customer Churn Prediction - Audrey Muaka" />
+  <title>Customer Churn Prediction — Audrey Muaka</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F7F8FA;
+      --bg2:#EEF1F5;
+      --text:#111827;
+      --muted:#6B7280;
+      --card:#FFFFFF;
+      --border:rgba(17,24,39,.10);
+      --primary:#111827;
+      --sans:"Space Grotesk", system-ui, sans-serif;
+      --mono:"JetBrains Mono", monospace;
+      --r:20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px 20px 70px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:blur(14px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .logo-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#6e42ff,#00d1ff);
+    }
+
+    .brand-name{font-weight:700}
+    .brand-tag{color:var(--muted)}
+
+    .back-link{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:500;
+    }
+
+    .back-link:hover{color:var(--text)}
+
+    .hero{
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+
+    .eyebrow{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:13px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(32px,5vw,52px);
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+
+    .subtitle{
+      max-width:780px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      box-shadow:0 16px 50px rgba(15,23,42,.08);
+      padding:22px;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-family:var(--mono);
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--muted);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+    }
+
+    .card p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{
+      margin:8px 0;
+      line-height:1.55;
+    }
+
+    .section-note{
+      margin-top:26px;
+      padding:18px 20px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.65);
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .footer{
+      margin-top:42px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      font-family:var(--mono);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="logo-dot"></span>
+      <span class="brand-name">Audrey Muaka</span>
+      <span class="brand-tag">/ churn</span>
+    </a>
+
+    <a href="index.html" class="back-link">← Retour au portfolio</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Case study • Customer Analytics • Python</p>
+      <h1>Customer Churn Prediction</h1>
+      <p class="subtitle">
+        Ce projet présente une analyse complète de prédiction du churn client menée sous Python,
+        depuis l’exploration initiale des données jusqu’à la modélisation et aux recommandations business.
+        L’objectif est d’identifier les clients à risque et de mieux comprendre les leviers d’action
+        pour améliorer la rétention.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Étape 1 / EDA</span>
+        <h3>Exploration des données</h3>
+        <p>
+          Première phase consacrée à la compréhension du dataset, à l’analyse descriptive
+          et à l’identification des premières tendances utiles à la prédiction du churn.
+        </p>
+        <ul class="list">
+          <li>Comprendre la structure et la qualité des données</li>
+          <li>Identifier les patterns et signaux faibles</li>
+          <li>Détecter les problèmes de données (manquants, déséquilibres, incohérences)</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tag">Étape 2 / Modeling</span>
+        <h3>Feature engineering & modélisation</h3>
+        <p>
+          Deuxième phase dédiée à la préparation des variables, à leur transformation et à la construction
+          de modèles de classification pour estimer le risque de churn.
+        </p>
+        <ul class="list">
+          <li>Transformation et encodage des variables</li>
+          <li>Sélection de features pertinentes</li>
+          <li>Modèles prédictifs : régression logistique, Random Forest, etc.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tag">Étape 3 / Business</span>
+        <h3>Résultats & recommandations</h3>
+        <p>
+          Dernière phase centrée sur l’évaluation des performances, l’interprétation des résultats
+          et leur traduction en recommandations concrètes pour le métier.
+        </p>
+        <ul class="list">
+          <li>Analyse de performance des modèles</li>
+          <li>Interprétation des facteurs explicatifs du churn</li>
+          <li>Recommandations business pour la rétention client</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="section-note">
+      L’intérêt de cette démarche est de montrer une approche end-to-end de la data science :
+      comprendre les données, construire un modèle robuste, puis transformer les résultats en décisions
+      utiles pour le business. Ce projet met donc en avant à la fois les compétences analytiques,
+      techniques et décisionnelles.
+    </div>
+
+    <footer class="footer">
+      © <span id="year"></span> Audrey Muaka
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
