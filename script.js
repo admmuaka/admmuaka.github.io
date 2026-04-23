@@ -249,7 +249,7 @@ const projects = [
       "Business recommendations"
     ],
     linkLabel: "View project",
-    link: "#"
+    link: "Churn.html"
   }
 }
 ];
