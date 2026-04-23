@@ -223,6 +223,34 @@ const projects = [
     linkLabel: "View project",
     link: "CNN_Project_EN.pdf"
   }
+},
+{
+  id: "customer-churn",
+  tags: ["predictive"],
+  fr: {
+    title: "Prédiction du churn client — analyse de bout en bout",
+    desc: "Analyse complète d’un dataset client : exploration des données, feature engineering, modélisation et prédiction du churn afin d’identifier les profils à risque et guider les actions de rétention.",
+    bullets: [
+      "EDA & feature engineering",
+      "Modèles prédictifs (Logistic Regression / Random Forest)",
+      "Analyse des facteurs clés",
+      "Recommandations business"
+    ],
+    linkLabel: "Voir le projet",
+    link: "#"
+  },
+  en: {
+    title: "Customer Churn Prediction — End-to-End Analysis",
+    desc: "End-to-end analysis of a customer dataset: exploratory analysis, feature engineering, predictive modeling, and churn prediction to identify at-risk customers and support retention strategies.",
+    bullets: [
+      "EDA & feature engineering",
+      "Predictive models (Logistic Regression / Random Forest)",
+      "Key driver analysis",
+      "Business recommendations"
+    ],
+    linkLabel: "View project",
+    link: "#"
+  }
 }
 ];
 function updateCV(lang) {
